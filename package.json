@@ -1,0 +1,30 @@
+{
+  "name": "petshop",
+  "version": "1.0.0",
+  "description": "sistema de agenda de um petshop",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipe-tneves/petshop.git"
+  },
+  "author": "Felipe Tadeu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipe-tneves/petshop/issues"
+  },
+  "homepage": "https://github.com/felipe-tneves/petshop#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
