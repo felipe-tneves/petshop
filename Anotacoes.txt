@@ -1,0 +1,11 @@
+npm -v 
+npm init
+npm install express
+npm install --save-dev nodemon
+npm install body-parser
+npm install consign ==> Essa biblioteca Consign é sugerida para facilitar o gerenciamento das rotas no express agrupa as rotas
+npm install moment ==> Através dela é possível converter, manipular, validar e apresentar datas em javascript
+npm install mysql
+
+---------------------------------------------------------------------------
+
