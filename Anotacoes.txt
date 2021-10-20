@@ -9,3 +9,7 @@ npm install mysql
 
 ---------------------------------------------------------------------------
 
+rodando a api de servicos 
+cd .\servicos
+npm install
+node clientes.js 
