@@ -1,5 +1,26 @@
-//file systen - sistemas de arquivos 
 const fs = require('fs');
+const path = require('path');
+
+module.exports = (caminho, nomeDoArquivo, callbackImagemCriada) => {
+    const tiposValidos = ['jpg', 'png', 'jpeg']
+    const tipo = path.extname(caminho)
+    const tipoEhValido = tiposValidos.indexOf(tipo.substring(1)) !== -1
+
+    if(tipoEhValido){
+        const novoCaminho = `./assets/imagens/${nomeDoArquivo}${tipo}`
+    
+        fs.createReadStream(caminho)
+            .pipe(fs.createWriteStream(novoCaminho))
+            .on('finish', () => callbackImagemCriada(false, novoCaminho))
+    }else{
+        const erro = "Tipo é inválido"
+        console.log('Erro! Tipo inválido')
+        callbackImagemCriada(erro)
+    }
+
+}
+
+
 
 //fazendo o upload atraves do buffer de memoria
 //lendo o arquivo
@@ -17,6 +38,3 @@ const fs = require('fs');
 //fazendo upload de arquivos por stram
 //pipe transforma em arquivo de escrita
 //on chama um evento 
-fs.createReadStream('./assets/astronauta.jpg')
-    .pipe(fs.createWriteStream('./assets/astronauta-stram.jpg'))
-    .on('finish', () => console.log('Imagem escrita com sucesso'))
