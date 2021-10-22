@@ -3,7 +3,7 @@ const Atendimento = require('../models/atendimentos')
 module.exports = app => {
     app.get('/atendimentos', (req, res) => {
         Atendimento.lista()
-            .then(resultados => res.status(200).json(resultados))
+            .then(resultados => res.json(resultados))
             .catch(erros => res.status(400).json(erros))
     })
 
@@ -35,5 +35,4 @@ module.exports = app => {
 
         Atendimento.deleta(id, res)
     })
-
 }
